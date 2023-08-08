@@ -1,0 +1,74 @@
+{% load static %}
+
+<header class="header">
+    <a href="{% url 'index' %}" class="logo"><i class="fas fa fa-shopping-basket"></i>grocery</a>
+    <nav class="navbar">
+        <a href="{% url 'index' %}#home">home</a>
+        <a href="{% url 'index' %}#features">features</a>
+        <a href="{% url 'index' %}#products">products</a>
+        <a href="{% url 'index' %}#categories">categories</a>
+        <a href="{% url 'index' %}#review">review</a>
+        <a href="{% url 'index' %}#blogs">blogs</a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"><div class="cart-no">0</div></div>
+        <div class="fas fa-user" id="login-btn"></div>
+    </div>
+
+    <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="Search....">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+    <div class="shopping-cart">
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="{% static 'images/Potato.jpg' %}" alt="">
+            <div class="content">
+                <h3>Potato</h3>
+                <span class="price">$5.34/-</span>
+                <span class="quantity">qty : 1</span>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="{% static 'images/Bananas.jpeg' %}" alt="">
+            <div class="content">
+                <h3>Bananas</h3>
+                <span class="price">$2.72/-</span>
+                <span class="quantity">qty : 1</span>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="{% static 'images/Dragonfruit.jpeg' %}" alt="">
+            <div class="content">
+                <h3>Dragonfruit</h3>
+                <span class="price">$2.59/-</span>
+                <span class="quantity">qty : 1</span>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="{% static 'images/fresh1.jpeg' %}" alt="">
+            <div class="content">
+                <h3>Oranges</h3>
+                <span class="price">$4.18/-</span>
+                <span class="quantity">qty : 1</span>
+            </div>
+        </div>
+        <div class="total">total : $14.83/- </div>
+        <a href="{% url 'cart' %}" class="btn check-out">Checkout</a>
+    </div>
+
+    <div class="info">
+        <img src="{% static 'images/pic-1.png' %}" alt="" class="profile">
+        <h3>{{ uname }}</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod distinctio adipisci eos eligendi consequatur perspiciatis culpa illum voluptatum provident, repudiandae nulla cum quam.</p>
+    </div>
+
+
+</header>

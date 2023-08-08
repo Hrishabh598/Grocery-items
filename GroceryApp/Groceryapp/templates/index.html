@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Welcome to <span>Grocery</span> website</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, fuga quasi officiis vel qui excepturi? Voluptas recusandae quos officia ratione eaque dolorem magni. Explicabo rerum libero sunt officiis saepe incidunt atque eligendi.</p>
+            <a href="{% url 'index' %}#products" class="btn">Shop now</a>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <h1 class="heading"> our <span>features</span></h1>
+
+        <div class="box-container">
+            <div class="box">
+                <img src="{% static 'images/about-img-1.png' %}" alt="">
+                <h3>fresh and organic</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo magnam cum tempora cumque eveniet exercitationem voluptatum quidem numquam veniam officiis.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="box">
+                <img src="{% static 'images/about-img-2.png' %}" alt="">
+                <h3>Instant delivery</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo magnam cum tempora cumque eveniet exercitationem voluptatum quidem numquam veniam officiis.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="box">
+                <img src="{% static 'images/offers.png' %}" alt="">
+                <h3>Exciting offers</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo magnam cum tempora cumque eveniet exercitationem voluptatum quidem numquam veniam officiis.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <h1 class="heading">our <span>products</span></h1>
+        <div class="swiper product-slider">
+            <div class="swiper-wrapper">
+                {% for item in items %}
+                <div class="swiper-slide box">
+                    <img src="{% static 'images/'%}{{item.image}}" alt="">
+                    <h3 id="namepr{{item.id}}">{{ item.name }}</h3>
+                    <div class="price">${{ item.price }}/-</div>
+
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a id="pr{{ item.id }}" class="btn ct-btn">Add to cart</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="categories" id="categories">
+        <h1 class="heading">product <span>categories</span></h1>
+
+        <div class="box-container">
+            <div class="box">
+                <img src="{% static 'images/cat-1.png' %}" alt="">
+
+                <h3>fresh fruites</h3>
+                <p>upto 45% off</p>
+                <a href="#products" class="btn">shop now</a>
+            </div>
+            <div class="box">
+                <img src="{% static 'images/cat-2.png' %}" alt="">
+
+                <h3>Meat</h3>
+                <p>upto 20% off</p>
+                <a href="#products" class="btn">shop now</a>
+            </div>
+            <div class="box">
+                <img src="{% static 'images/cat-3.png' %}" alt="">
+
+                <h3>Vegetables</h3>
+                <p>upto 35% off</p>
+                <a href="#products" class="btn">shop now</a>
+            </div>
+            <div class="box">
+                <img src="{% static 'images/cat-4.png' %}" alt="">
+
+                <h3>fish</h3>
+                <p>upto 40% off</p>
+                <a href="#products" class="btn">shop now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="review" id="review">
+        <h1 class="heading">customer's <span>review</span></h1>
+
+        <div class="swiper review-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <img src="{% static 'images/pic-1.png' %}"" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, deserunt sit. Laudantium enim nesciunt accusamus voluptates provident eligendi? Ipsam repudiandae non sint perspiciatis.</p>
+                    <h3>john deo</h3>
+                    <div class="stars"></div>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="{% static 'images/pic-2.png' %}">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, deserunt sit. Laudantium enim nesciunt accusamus voluptates provident eligendi? Ipsam repudiandae non sint perspiciatis.</p>
+                    <h3>Alishia</h3>
+                    <div class="stars"></div>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="{% static 'images/pic-3.png' %}" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, deserunt sit. Laudantium enim nesciunt accusamus voluptates provident eligendi? Ipsam repudiandae non sint perspiciatis.</p>
+                    <h3>Abraham</h3>
+                    <div class="stars"></div>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="{% static 'images/pic-4.png' %}" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, deserunt sit. Laudantium enim nesciunt accusamus voluptates provident eligendi? Ipsam repudiandae non sint perspiciatis.</p>
+                    <h3>john deo</h3>
+                    <div class="stars"></div>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="{% static 'images/pic-5.png' %}" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, deserunt sit. Laudantium enim nesciunt accusamus voluptates provident eligendi? Ipsam repudiandae non sint perspiciatis.</p>
+                    <h3>Tom perry</h3>
+                    <div class="stars"></div>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="{% static 'images/pic-6.png' %}" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, deserunt sit. Laudantium enim nesciunt accusamus voluptates provident eligendi? Ipsam repudiandae non sint perspiciatis.</p>
+                    <h3>Shin ka-young</h3>
+                    <div class="stars"></div>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blogs" id="blogs">
+        <div class="heading">our <span>blogs</span></div>
+        <div class="box-container">
+            <div class="box">
+                <img src="{% static 'images/blog1.jpg' %}" alt="">
+                <div class="content">
+                    <div class="icons">
+                        <a href="#"><i class="fas fa-user"></i>by Joey Tribbiani</a>
+                        <a href="#"><i class="fas fa-calendar"></i>28th April 2023</a>
+                    </div>
+                    <h3>Food blogging</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem mollitia ipsam accusantium quo soluta consequuntur libero autem! Quibusdam corporis expedita odit quis suscipit.</p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{% static 'images/blog2.jpeg' %}" alt="">
+                <div class="content">
+                    <div class="icons">
+                        <a href="#"><i class="fas fa-user"></i>by Mathew Perry</a>
+                        <a href="#"><i class="fas fa-calendar"></i>1st may 2023</a>
+                    </div>
+                    <h3>Dry nuts and spices</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem mollitia ipsam accusantium quo soluta consequuntur libero autem! Quibusdam corporis expedita odit quis suscipit.</p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{% static 'images/blog3.jpg' %}" alt="">
+                <div class="content">
+                    <div class="icons">
+                        <a href="#"><i class="fas fa-user"></i>by Ross Green</a>
+                        <a href="#"><i class="fas fa-calendar"></i>16th Feb 2023</a>
+                    </div>
+                    <h3>fresh and organic vegetables and fruits</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem mollitia ipsam accusantium quo soluta consequuntur libero autem! Quibusdam corporis expedita odit quis suscipit.</p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{% static 'images/blog4.jpeg' %}" alt="">
+                <div class="content">
+                    <div class="icons">
+                        <a href="#"><i class="fas fa-user"></i>by Monica Bing</a>
+                        <a href="#"><i class="fas fa-calendar"></i>9th June 2023</a>
+                    </div>
+                    <h3>Main course Meals</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem mollitia ipsam accusantium quo soluta consequuntur libero autem! Quibusdam corporis expedita odit quis suscipit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}
+    {% block js %}
+    <script>
+        
+    </script>
+    {% endblock %}
+    
